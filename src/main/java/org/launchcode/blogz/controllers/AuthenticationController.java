@@ -52,13 +52,14 @@ public class AuthenticationController extends AbstractController {
 		}
 		
 		else {
-		User user = new User(username, password);
 		
-		HttpSession thisSession = request.getSession();	
+			HttpSession thisSession = request.getSession();
+			
+			User user1 = new User(username, password);
 		
-		setUserInSession(thisSession, user);
+			setUserInSession(thisSession, user1);
 		
-		return "redirect:blog/newpost";
+			return "redirect:blog/newpost";
 		}
 		
 		//Session thisSession = request.getSession(); (code that gets current session)
