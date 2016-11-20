@@ -52,7 +52,7 @@ public class AuthenticationController extends AbstractController {
 			HttpSession thisSession = request.getSession();
 			
 			User user1 = new User(username, password);
-		
+			userDao.save(user1);
 			setUserInSession(thisSession, user1);
 		
 			return "redirect:blog/newpost";
