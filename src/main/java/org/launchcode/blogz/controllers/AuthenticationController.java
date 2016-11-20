@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.launchcode.blogz.models.User;
-import org.launchcode.blogz.models.dao.UserDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,12 +34,10 @@ public class AuthenticationController extends AbstractController {
 		} else {
 			model.addAttribute("username", username);
 		}
-		
 		if (!User.isValidPassword(password)) {
 			has_error = true;
 			model.addAttribute("password_error", "Invalid password");
 		}
-		
 		if (!password.equals(verify)) {
 			has_error = true;
 			model.addAttribute("verify_error", "Passwords do not match");
@@ -50,7 +47,6 @@ public class AuthenticationController extends AbstractController {
 		if (has_error == true) {
 			return "signup";
 		}
-		
 		else {
 		
 			HttpSession thisSession = request.getSession();
@@ -60,9 +56,7 @@ public class AuthenticationController extends AbstractController {
 			setUserInSession(thisSession, user1);
 		
 			return "redirect:blog/newpost";
-		}
-		
-		//Session thisSession = request.getSession(); (code that gets current session)
+		}		
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -75,16 +69,16 @@ public class AuthenticationController extends AbstractController {
 		
 		// TODO - implement login
 		// get parameters from request
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		//String username = request.getParameter("username");
+		//String password = request.getParameter("password");
 		
 		// get user by their username
-		// User user = UserDao.findByUid(user.getUid());
-		
+		//User user = new User(username, password);
 		// check that password is correct...
-//		if(!User.isMatchingPassword(password)){
-//
-//		}
+		
+		//user.isMatchingPassword(password);
+			
+		
 		// if so, then log them in (i.e. setting the user in the session)
 		
 		// Session thisSession = request.getSession(); (code that gets current session)
