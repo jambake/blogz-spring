@@ -19,6 +19,18 @@ public class BlogController extends AbstractController {
 		model.addAttribute("users", allUsers);
 		
 		return "index";
+		
+//		int numPosts = 0;
+//		for (int i = 0; i < allUsers.size(); i++) {
+//			User user = userDao.findByUid(i);
+//			List<Post> userPosts = user.getPosts();
+//			for (int j = 0; j < userPosts.size(); i++) {
+//				numPosts++;
+//			}
+//			model.addAttribute("numPosts", numPosts);
+//		}
+		//model.addAttribute("numPosts", numPosts);
+		
 	}
 	
 	@RequestMapping(value = "/blog")

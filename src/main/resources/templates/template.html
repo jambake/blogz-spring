@@ -9,18 +9,24 @@
 <body>
 
 <nav th:fragment="navigation">
-	<ul id="user-account">
+	<ul class="topnav" id="user-account">
 	    <li><a href="/login">login</a></li>
 	    <li><a href="/logout">logout</a></li>
 	</ul>
-	<ul>
+	<ul class="topnav">
         <li><a href="/">home</a></li>
         <li><a href="/blog">all posts</a></li>
         <li><a href="/blog/newpost">new post</a></li>
-        <!-- <li th:text="'Logged in as: ' + ${}"></li> -->
-        <!-- Try and use a fragment / replace to show who you are currently logged in as? -->
+        <li class="icon">
+          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
     </ul>
 </nav>
 
 </body>
 </html>
+
+
+<!-- <li th:text="${getUserFromSession(HttpSession request.getSession()).getUsername()}"></li> -->
+<!-- <li th:text="'Logged in as: ' + ${}"></li> -->
+<!-- Try and use a fragment / replace to show who you are currently logged in as? -->
