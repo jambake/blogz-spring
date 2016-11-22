@@ -94,6 +94,18 @@ public class AuthenticationController extends AbstractController {
 			return "redirect:blog/newpost";
 		}
 	}
+	
+	// Try and show who you are currently logged in as?
+	
+//	@RequestMapping(value = "/", method = RequestMethod.POST)
+//	public String currentUser(HttpServletRequest request, Model model){
+//		HttpSession thisSession = request.getSession();
+//		User user1 = getUserFromSession(thisSession);
+//		String username = user1.getUsername();
+//		model.addAttribute("username", username);
+//		
+//		return "template";
+//	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request){
