@@ -33,14 +33,14 @@ public class PostController extends AbstractController {
 		boolean has_error = false;
 		if (title == null || title == "") {
 			has_error = true;
-			model.addAttribute("error", "Please provide a post title");
+			model.addAttribute("error1", "Please provide a post title");
 		}
 		else {
 			model.addAttribute("title", title);
 		}
 		if (body == null || body == ""){
 			has_error = true;
-			model.addAttribute("error", "Please add some text to your post");
+			model.addAttribute("error2", "Please add some text to your post");
 		}
 		else {
 			model.addAttribute("body", body);
